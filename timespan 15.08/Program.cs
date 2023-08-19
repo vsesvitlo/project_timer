@@ -59,29 +59,30 @@
 {
     int[] masA = { 1, 2, 5, 1, 3, 4, 1, 14 };
     int[] masB = { 4, 3, 4, 4, 1, 8, 2, 9 };
-    int forMinusA = masA.Length % 3;
-    int forMinusB = masB.Length % 3;
-    int thirdAquantity = masA.Length / 3 - forMinusA;
-    int thirdBquantity = masB.Length / 3 - forMinusB;
+    int thirdAquantity = masA.Length / 3; 
+    int thirdBquantity = masB.Length / 2;
     int count = thirdAquantity + thirdBquantity;
     int[] result = new int[count];
+    int i = 0;
     
-    for (int i = 0; i < result.Length; i++)
-    {
-        for (int j = 0; j < masA.Length; i+=3)
+    for (int j = 2; j < masA.Length; j+=3)
         {
             result[i] = masA[j];
+        i++;
+      
         }
-        for (int k = 0; k < masB.Length; k += 3)
+        for (int k = 1; k < masB.Length; k += 2)
         {
             result[i] = masA[k];
+        i++;
+       
         }
-        
-    }
-    for(int n = 0; n< result.Length; n++)
+
+   for (i = 0; i < result.Length; i++)
     {
-        Console.WriteLine(result[n]);
-    }
-    
+    Console.WriteLine(result[i]);
+    } 
 };
-//ThirdFromMac( [1, 2, 5, 1, 3, 4, 1, 14]; [ 4, 3, 4, 4, 1, 8, 2, 9 ]);
+
+
+
